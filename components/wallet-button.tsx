@@ -68,7 +68,7 @@ export default function WalletButton({ className, children }: WalletButtonProps)
     if (isProcessingTransaction) return "Processing..."
     if (hasError) return "Try Again"
     if (publicKey) return formatWalletAddress(publicKey.toString())
-    return children || "Connect Wallet"
+    return children || "Connect"
   }
 
   // Handle button click
