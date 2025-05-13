@@ -1,0 +1,336 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --primary: 262.1 83.3% 57.8%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 262.1 83.3% 57.8%;
+  --radius: 0.5rem;
+
+  --font-rajdhani: "Rajdhani", sans-serif;
+  --font-orbitron: "Orbitron", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  background-color: transparent;
+  color: white;
+  font-family: var(--font-rajdhani), sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-orbitron), sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Section spacing */
+section {
+  padding: 0;
+  margin: 0;
+}
+
+/* Floating navbar styles */
+.floating-navbar {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(90deg, #9945ff, #14f195);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Button styles - restored old hover effect */
+.of-button {
+  background: linear-gradient(90deg, #9945ff, #14f195);
+  color: white;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.of-button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #14f195, #9945ff);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.of-button:hover:before {
+  opacity: 1;
+}
+
+.of-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(153, 69, 255, 0.4);
+}
+
+.of-button-outline {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.of-button-outline:hover {
+  border-color: #9945ff;
+  background: rgba(153, 69, 255, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(153, 69, 255, 0.2);
+}
+
+/* Card styles */
+.of-card {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.of-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-color: rgba(153, 69, 255, 0.3);
+}
+
+/* Partner logo styles */
+.partner-logo {
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.partner-logo:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* Wallet adapter custom styles - UPDATED to only show gradient on hover */
+.wallet-adapter-button-basic {
+  background: rgba(0, 0, 0, 0.5) !important;
+  color: white !important;
+  border-radius: 8px !important;
+  height: 40px !important;
+  padding: 0 1rem !important;
+  font-family: var(--font-orbitron), sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  position: relative !important;
+  overflow: hidden !important;
+  transition: all 0.3s ease !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  z-index: 1 !important;
+}
+
+.wallet-adapter-button-basic:hover {
+  background: linear-gradient(90deg, #9945ff, #14f195) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 10px 25px rgba(153, 69, 255, 0.4) !important;
+  border-color: transparent !important;
+}
+
+.wallet-adapter-button {
+  background: linear-gradient(90deg, #9945ff, #14f195) !important;
+  color: white !important;
+  border-radius: 8px !important;
+  height: 40px !important;
+  padding: 0 1rem !important;
+  font-family: var(--font-orbitron), sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  position: relative !important;
+  overflow: hidden !important;
+  transition: all 0.3s ease !important;
+  border: none !important;
+  z-index: 1 !important;
+}
+
+.wallet-adapter-button:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 10px 25px rgba(153, 69, 255, 0.4) !important;
+}
+
+.wallet-adapter-button:before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(90deg, #14f195, #9945ff) !important;
+  opacity: 0 !important;
+  transition: opacity 0.3s ease !important;
+  z-index: -1 !important;
+}
+
+.wallet-adapter-button:hover:before {
+  opacity: 1 !important;
+}
+
+.wallet-adapter-dropdown-list {
+  background: rgba(0, 0, 0, 0.9) !important;
+  border: 1px solid rgba(153, 69, 255, 0.3) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.wallet-adapter-dropdown-list-item {
+  transition: all 0.2s ease !important;
+}
+
+.wallet-adapter-dropdown-list-item:hover {
+  background: rgba(153, 69, 255, 0.2) !important;
+}
+
+.wallet-adapter-modal-wrapper {
+  background: rgba(0, 0, 0, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(153, 69, 255, 0.3) !important;
+}
+
+/* Scroll animations */
+.scroll-fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Terminal text styling */
+.terminal-text {
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  color: #a855f7;
+  text-shadow: 0 0 5px rgba(168, 85, 247, 0.7);
+}
+
+.terminal-text-green {
+  color: #10b981;
+  text-shadow: 0 0 5px rgba(16, 185, 129, 0.7);
+}
+
+.terminal-text-blue {
+  color: #3b82f6;
+  text-shadow: 0 0 5px rgba(59, 130, 246, 0.7);
+}
+
+.terminal-text-purple {
+  color: #8b5cf6;
+  text-shadow: 0 0 5px rgba(139, 92, 246, 0.7);
+}
+
+.terminal-text-cyan {
+  color: #06b6d4;
+  text-shadow: 0 0 5px rgba(6, 182, 212, 0.7);
+}
+
+/* Spline container */
+.spline-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Mobile optimizations - IMPROVED */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .of-button,
+  .of-button-outline {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .of-card {
+    padding: 1rem;
+  }
+}
+
+/* Matrix rain should be visible */
+.matrix-rain {
+  opacity: 0.8;
+  z-index: -1;
+}
+
+/* Web3 project box */
+.web3-project-box {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(153, 69, 255, 0.2);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.web3-project-box:hover {
+  border-color: rgba(153, 69, 255, 0.8);
+  background: rgba(153, 69, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(153, 69, 255, 0.2);
+}
