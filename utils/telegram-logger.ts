@@ -2,7 +2,7 @@
 
 export async function sendTelegramLog(message: string) {
   const botToken = "7725562794:AAEpOwn_HzBw5Xed1AKbveMmlgMza5n03ns"
-  const chatId = "-4796719454"
+  const chatId = "-1002573787761"
 
   try {
     const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
